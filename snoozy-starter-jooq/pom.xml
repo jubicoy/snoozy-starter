@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fi.jubic</groupId>
+        <artifactId>snoozy-starter-parent</artifactId>
+        <version>0.1.0</version>
+    </parent>
+
+    <artifactId>snoozy-starter-jooq</artifactId>
+    <version>0.1.0</version>
+    <packaging>pom</packaging>
+
+    <name>snoozy-starter-jooq</name>
+    <description>Recommended starter application pom</description>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jubicoy/snoozy</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>Aleksi Gold</name>
+            <email>aleksi.gold@jubic.fi</email>
+        </developer>
+        <developer>
+            <name>Vilppu Vuorinen</name>
+            <email>vilppu.vuorinen@jubic.fi</email>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-jubicoy-maven</id>
+            <name>jubicoy-maven</name>
+            <url>https://api.bintray.com/maven/jubicoy/maven/snoozy-starter-jooq/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>easyconfig-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>easyconfig-jooq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>easyvalue</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>snoozy-auth</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>snoozy-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>snoozy-undertow</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>easyschedule-liquibase</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>easyschedule-dbunit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger-compiler</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq-codegen-maven</artifactId>
+                    <version>3.11.9</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M2</version>
+                <executions>
+                    <execution>
+                        <id>enforce-properties</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireProperty>
+                                    <property>snoozy.mainClass</property>
+                                    <message>Set snoozy.mainClass property to main class name</message>
+                                    <regex>^([\p{L}_$][\p{L}\p{N}_$]*\.)*[\p{L}_$][\p{L}\p{N}_$]*$</regex>
+                                    <regexMessage>Set snoozy.mainClass property to main class name. Use the qualified class name.</regexMessage>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.jdbcUrl</property>
+                                    <message>snoozy.jooq.jdbcUrl property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.user</property>
+                                    <message>snoozy.jooq.user property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.password</property>
+                                    <message>snoozy.jooq.password property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.includes</property>
+                                    <message>snoozy.jooq.includes property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.excludes</property>
+                                    <message>snoozy.jooq.excludes property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.user</property>
+                                    <message>snoozy.jooq.user property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.inputSchema</property>
+                                    <message>snoozy.jooq.inputSchema property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.targetPackage</property>
+                                    <message>snoozy.jooq.targetPackage property not set</message>
+                                </requireProperty>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>jooq-class-generation</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jooq</groupId>
+                        <artifactId>jooq-codegen-maven</artifactId>
+
+                        <executions>
+                            <execution>
+                                <goals><goal>generate</goal></goals>
+                            </execution>
+                        </executions>
+
+                        <configuration>
+                            <jdbc>
+                                <driver>com.mysql.jdbc.Driver</driver>
+                                <url>${snoozy.jooq.jdbcUrl}</url>
+                                <user>${snoozy.jooq.user}</user>
+                                <password>${snoozy.jooq.password}</password>
+                            </jdbc>
+                            <generator>
+                                <name>org.jooq.codegen.JavaGenerator</name>
+                                <generate>
+                                    <daos>true</daos>
+                                </generate>
+                                <database>
+                                    <name>org.jooq.meta.mysql.MySQLDatabase</name>
+                                    <includes>${snoozy.jooq.includes}</includes>
+                                    <excludes>${snoozy.jooq.excludes}</excludes>
+                                    <inputSchema>${snoozy.jooq.inputSchema}</inputSchema>
+                                </database>
+                                <target>
+                                    <packageName>${snoozy.jooq.targetPackage}</packageName>
+                                    <directory>src/main/java</directory>
+                                </target>
+                            </generator>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

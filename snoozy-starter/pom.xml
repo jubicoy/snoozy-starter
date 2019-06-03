@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fi.jubic</groupId>
+        <artifactId>snoozy-starter-parent</artifactId>
+        <version>0.1.0</version>
+    </parent>
+
+    <artifactId>snoozy-starter</artifactId>
+    <packaging>pom</packaging>
+
+    <name>snoozy-starter</name>
+    <description>Recommended starter application pom</description>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jubicoy/snoozy</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>Aleksi Gold</name>
+            <email>aleksi.gold@jubic.fi</email>
+        </developer>
+        <developer>
+            <name>Vilppu Vuorinen</name>
+            <email>vilppu.vuorinen@jubic.fi</email>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-jubicoy-maven</id>
+            <name>jubicoy-maven</name>
+            <url>https://api.bintray.com/maven/jubicoy/maven/snoozy-starter/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>easyconfig-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>easyvalue</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>snoozy-auth</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>snoozy-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>snoozy-undertow</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger-compiler</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
