@@ -1,17 +1,17 @@
 language: java
 jdk:
-- oraclejdk8
-- oraclejdk11
-- openjdk8
-- openjdk11
+  - oraclejdk8
+  - oraclejdk11
+  - openjdk8
+  - openjdk11
 install: true
 script:
-- make install
-before_deploy:
-- cp .ci-settings.xml $HOME/.m2/settings.xml
-deploy:
-  - provider: script
-    skip_cleanup: true
-    on:
-      tags: true
-    script: 'mvn clean deploy -Denforcer.skip=true -Dsnoozy.dev'
+  - make install
+
+jobs:
+  include:
+    - stage: deploy
+      script: 'cp .ci-settings.xml $HOME/.m2/settings.xml && mvn clean deploy -Denforcer.skip=true -Dsnoozy.dev'
+      jdk: openjdk8
+      if: tag IS present
+
