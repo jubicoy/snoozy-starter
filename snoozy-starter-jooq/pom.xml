@@ -142,12 +142,20 @@
                                     <message>snoozy.jooq.jdbcUrl property not set</message>
                                 </requireProperty>
                                 <requireProperty>
+                                    <property>snoozy.jooq.jdbcDriver</property>
+                                    <message>snoozy.jooq.jdbcDriver property not set</message>
+                                </requireProperty>
+                                <requireProperty>
                                     <property>snoozy.jooq.user</property>
                                     <message>snoozy.jooq.user property not set</message>
                                 </requireProperty>
                                 <requireProperty>
                                     <property>snoozy.jooq.password</property>
                                     <message>snoozy.jooq.password property not set</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>snoozy.jooq.databaseMetaName</property>
+                                    <message>snoozy.jooq.databaseMetaName property not set</message>
                                 </requireProperty>
                                 <requireProperty>
                                     <property>snoozy.jooq.includes</property>
@@ -195,7 +203,7 @@
 
                         <configuration>
                             <jdbc>
-                                <driver>com.mysql.jdbc.Driver</driver>
+                                <driver>${snoozy.jooq.jdbcDriver}</driver>
                                 <url>${snoozy.jooq.jdbcUrl}</url>
                                 <user>${snoozy.jooq.user}</user>
                                 <password>${snoozy.jooq.password}</password>
@@ -206,7 +214,7 @@
                                     <daos>true</daos>
                                 </generate>
                                 <database>
-                                    <name>org.jooq.meta.mysql.MySQLDatabase</name>
+                                    <name>${snoozy.jooq.databaseMetaName}</name>
                                     <includes>${snoozy.jooq.includes}</includes>
                                     <excludes>${snoozy.jooq.excludes}</excludes>
                                     <inputSchema>${snoozy.jooq.inputSchema}</inputSchema>
