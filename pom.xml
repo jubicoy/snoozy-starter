@@ -145,6 +145,19 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.1.2</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
@@ -287,6 +300,7 @@
                                     </arguments>
                                     <environmentVariables>
                                         <NODE_ENV>production</NODE_ENV>
+                                        <APPLICATION_VERSION>${project.version}</APPLICATION_VERSION>
                                     </environmentVariables>
                                 </configuration>
                             </execution>
