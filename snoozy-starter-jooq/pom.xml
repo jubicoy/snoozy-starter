@@ -50,6 +50,11 @@
         </repository>
     </distributionManagement>
 
+    <properties>
+        <snoozy.jooq.generate.daos>false</snoozy.jooq.generate.daos>
+        <snoozy.jooq.generate.pojos>false</snoozy.jooq.generate.pojos>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>fi.jubic</groupId>
@@ -211,7 +216,8 @@
                             <generator>
                                 <name>org.jooq.codegen.JavaGenerator</name>
                                 <generate>
-                                    <daos>true</daos>
+                                    <daos>${snoozy.jooq.generate.daos}</daos>
+                                    <pojos>${snoozy.jooq.generate.pojos}</pojos>
                                 </generate>
                                 <database>
                                     <name>${snoozy.jooq.databaseMetaName}</name>
