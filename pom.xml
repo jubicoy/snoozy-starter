@@ -52,10 +52,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snoozy.version>0.1.2</snoozy.version>
+        <snoozy.version>0.2.1</snoozy.version>
         <dagger.version>2.21</dagger.version>
-        <easyconfig.version>0.1.10</easyconfig.version>
-        <easyschedule.version>0.1.4</easyschedule.version>
+        <easyconfig.version>0.2.0</easyconfig.version>
+        <easyschedule.version>0.1.5</easyschedule.version>
         <snoozy.front.testPhase>test</snoozy.front.testPhase>
     </properties>
 
