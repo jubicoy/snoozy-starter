@@ -56,6 +56,10 @@
         </dependency>
         <dependency>
             <groupId>fi.jubic</groupId>
+            <artifactId>easyconfig-snoozy</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
             <artifactId>easyvalue</artifactId>
         </dependency>
 

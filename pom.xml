@@ -52,9 +52,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snoozy.version>0.3.1</snoozy.version>
+        <snoozy.version>0.4.0</snoozy.version>
         <dagger.version>2.21</dagger.version>
-        <easyconfig.version>0.3.2</easyconfig.version>
+        <easyconfig.version>0.4.0</easyconfig.version>
         <easyschedule.version>0.1.5</easyschedule.version>
         <snoozy.front.testPhase>test</snoozy.front.testPhase>
     </properties>
@@ -64,6 +64,11 @@
             <dependency>
                 <groupId>fi.jubic</groupId>
                 <artifactId>easyconfig-core</artifactId>
+                <version>${easyconfig.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>fi.jubic</groupId>
+                <artifactId>easyconfig-snoozy</artifactId>
                 <version>${easyconfig.version}</version>
             </dependency>
             <dependency>
