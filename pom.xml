@@ -55,7 +55,7 @@
         <snoozy.version>0.4.0</snoozy.version>
         <dagger.version>2.21</dagger.version>
         <easyconfig.version>0.4.0</easyconfig.version>
-        <easyschedule.version>0.1.6</easyschedule.version>
+        <easyschedule.version>0.1.7</easyschedule.version>
         <snoozy.front.testPhase>test</snoozy.front.testPhase>
     </properties>
 
