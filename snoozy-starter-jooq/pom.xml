@@ -53,6 +53,7 @@
     <properties>
         <snoozy.jooq.generate.daos>false</snoozy.jooq.generate.daos>
         <snoozy.jooq.generate.pojos>false</snoozy.jooq.generate.pojos>
+        <snoozy.jooq.outputSchemaToDefault>true</snoozy.jooq.outputSchemaToDefault>
     </properties>
 
     <dependencies>
@@ -243,6 +244,7 @@
                                     <includes>${snoozy.jooq.includes}</includes>
                                     <excludes>${snoozy.jooq.excludes}</excludes>
                                     <inputSchema>${snoozy.jooq.inputSchema}</inputSchema>
+                                    <outputSchemaToDefault>${snoozy.jooq.outputSchemaToDefault}</outputSchemaToDefault>
                                 </database>
                                 <target>
                                     <packageName>${snoozy.jooq.targetPackage}</packageName>
