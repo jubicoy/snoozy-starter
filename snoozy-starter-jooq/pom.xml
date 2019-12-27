@@ -134,15 +134,6 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.jooq</groupId>
-                    <artifactId>jooq-codegen-maven</artifactId>
-                    <version>3.11.11</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -239,53 +230,38 @@
                     </plugins>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>3.11.11</version>
+                <configuration>
+                    <jdbc>
+                        <driver>${snoozy.jooq.jdbcDriver}</driver>
+                        <url>${snoozy.jooq.jdbcUrl}</url>
+                        <user>${snoozy.jooq.user}</user>
+                        <password>${snoozy.jooq.password}</password>
+                    </jdbc>
+                    <generator>
+                        <name>org.jooq.codegen.JavaGenerator</name>
+                        <generate>
+                            <daos>${snoozy.jooq.generate.daos}</daos>
+                            <pojos>${snoozy.jooq.generate.pojos}</pojos>
+                        </generate>
+                        <database>
+                            <name>${snoozy.jooq.databaseMetaName}</name>
+                            <includes>${snoozy.jooq.includes}</includes>
+                            <excludes>${snoozy.jooq.excludes}</excludes>
+                            <inputSchema>${snoozy.jooq.inputSchema}</inputSchema>
+                            <outputSchemaToDefault>${snoozy.jooq.outputSchemaToDefault}</outputSchemaToDefault>
+                        </database>
+                        <target>
+                            <packageName>${snoozy.jooq.targetPackage}</packageName>
+                            <directory>src/main/java</directory>
+                        </target>
+                    </generator>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>jooq-class-generation</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jooq</groupId>
-                        <artifactId>jooq-codegen-maven</artifactId>
-
-                        <executions>
-                            <execution>
-                                <goals><goal>generate</goal></goals>
-                            </execution>
-                        </executions>
-
-                        <configuration>
-                            <jdbc>
-                                <driver>${snoozy.jooq.jdbcDriver}</driver>
-                                <url>${snoozy.jooq.jdbcUrl}</url>
-                                <user>${snoozy.jooq.user}</user>
-                                <password>${snoozy.jooq.password}</password>
-                            </jdbc>
-                            <generator>
-                                <name>org.jooq.codegen.JavaGenerator</name>
-                                <generate>
-                                    <daos>${snoozy.jooq.generate.daos}</daos>
-                                    <pojos>${snoozy.jooq.generate.pojos}</pojos>
-                                </generate>
-                                <database>
-                                    <name>${snoozy.jooq.databaseMetaName}</name>
-                                    <includes>${snoozy.jooq.includes}</includes>
-                                    <excludes>${snoozy.jooq.excludes}</excludes>
-                                    <inputSchema>${snoozy.jooq.inputSchema}</inputSchema>
-                                    <outputSchemaToDefault>${snoozy.jooq.outputSchemaToDefault}</outputSchemaToDefault>
-                                </database>
-                                <target>
-                                    <packageName>${snoozy.jooq.targetPackage}</packageName>
-                                    <directory>src/main/java</directory>
-                                </target>
-                            </generator>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
