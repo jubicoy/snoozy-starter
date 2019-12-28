@@ -60,7 +60,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snoozy.version>0.5.0</snoozy.version>
         <dagger.version>2.21</dagger.version>
-        <easyconfig.version>0.4.2</easyconfig.version>
+        <easyconfig.version>0.4.3</easyconfig.version>
         <easyschedule.version>0.1.8</easyschedule.version>
         <snoozy.front.testPhase>test</snoozy.front.testPhase>
         <spotbugs.version>3.1.12.2</spotbugs.version>
@@ -87,7 +87,7 @@
             <dependency>
                 <groupId>fi.jubic</groupId>
                 <artifactId>easyvalue</artifactId>
-                <version>0.2.8</version>
+                <version>0.2.10</version>
             </dependency>
 
             <dependency>
@@ -357,9 +357,22 @@
                                 <filter>
                                     <artifact>*:*</artifact>
                                     <excludes>
+                                        <exclude>module-info.class</exclude>
                                         <exclude>META-INF/*.SF</exclude>
                                         <exclude>META-INF/*.DSA</exclude>
                                         <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>com.google.code.findbugs:jsr305</artifact>
+                                    <excludes>
+                                        <exclude>javax/annotation/**</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>net.jcip:jcip-annotations</artifact>
+                                    <excludes>
+                                        <exclude>net/jcip/annotations/**</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
