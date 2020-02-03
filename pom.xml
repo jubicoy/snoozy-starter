@@ -58,7 +58,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snoozy.version>0.5.0</snoozy.version>
+        <snoozy.version>0.6.0</snoozy.version>
         <dagger.version>2.21</dagger.version>
         <easyconfig.version>0.4.3</easyconfig.version>
         <easyschedule.version>0.1.8</easyschedule.version>
@@ -87,7 +87,7 @@
             <dependency>
                 <groupId>fi.jubic</groupId>
                 <artifactId>easyvalue</artifactId>
-                <version>0.2.10</version>
+                <version>1.0.0</version>
             </dependency>
 
             <dependency>
@@ -326,12 +326,12 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.27</version>
+                        <version>8.29</version>
                     </dependency>
                     <dependency>
                         <groupId>fi.jubic</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>0.2.2</version>
+                        <version>0.3.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
