@@ -206,7 +206,7 @@
                 <executions>
                     <execution>
                         <id>check</id>
-                        <phase>test</phase>
+                        <phase>${snoozy.linter.execPhase}</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
