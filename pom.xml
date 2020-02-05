@@ -62,9 +62,10 @@
         <dagger.version>2.21</dagger.version>
         <easyconfig.version>0.4.3</easyconfig.version>
         <easyschedule.version>0.1.8</easyschedule.version>
-        <snoozy.front.testPhase>test</snoozy.front.testPhase>
         <spotbugs.version>3.1.12.2</spotbugs.version>
         <findsecbugs.version>1.10.1</findsecbugs.version>
+        <snoozy.front.testPhase>test</snoozy.front.testPhase>
+        <snoozy.linter.execPhase>test</snoozy.linter.execPhase>
     </properties>
 
     <dependencyManagement>
@@ -272,7 +273,7 @@
                 <executions>
                     <execution>
                         <id>check</id>
-                        <phase>test</phase>
+                        <phase>${snoozy.linter.execPhase}</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -316,7 +317,7 @@
                 <executions>
                     <execution>
                         <id>check</id>
-                        <phase>test</phase>
+                        <phase>${snoozy.linter.execPhase}</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -492,7 +493,7 @@
             </build>
         </profile>
         <profile>
-            <id>front-test</id>
+            <id>skip-tests</id>
             <activation>
                 <property>
                     <name>skipTests</name>
@@ -500,6 +501,7 @@
             </activation>
             <properties>
                 <snoozy.front.testPhase>none</snoozy.front.testPhase>
+                <snoozy.linter.execPhase>none</snoozy.linter.execPhase>
             </properties>
         </profile>
     </profiles>
