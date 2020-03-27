@@ -4,7 +4,7 @@
 
     <groupId>fi.jubic</groupId>
     <artifactId>snoozy-starter-parent</artifactId>
-    <version>0.6.3</version>
+    <version>0.6.4</version>
     <packaging>pom</packaging>
 
     <name>snoozy-starter-parent</name>
