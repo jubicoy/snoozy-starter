@@ -54,6 +54,7 @@
         <snoozy.jooq.generate.daos>false</snoozy.jooq.generate.daos>
         <snoozy.jooq.generate.pojos>false</snoozy.jooq.generate.pojos>
         <snoozy.jooq.outputSchemaToDefault>true</snoozy.jooq.outputSchemaToDefault>
+        <snoozy.liquibase.migrations>${basedir}/src/main/resources/migrations.xml</snoozy.liquibase.migrations>
     </properties>
 
     <dependencies>
@@ -271,6 +272,19 @@
                             <directory>src/main/java</directory>
                         </target>
                     </generator>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>3.9.0</version>
+                <configuration>
+                    <changeLogFile>${snoozy.liquibase.migrations}</changeLogFile>
+                    <driver>${snoozy.jooq.jdbcDriver}</driver>
+                    <url>${snoozy.jooq.jdbcUrl}</url>
+                    <username>${snoozy.jooq.user}</username>
+                    <password>${snoozy.jooq.password}</password>
                 </configuration>
             </plugin>
         </plugins>
