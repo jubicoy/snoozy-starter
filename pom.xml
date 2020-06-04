@@ -422,6 +422,7 @@
                                     <workingDirectory>${basedir}/front/</workingDirectory>
                                     <arguments>
                                         <argument>ci</argument>
+                                        <argument>--prefer-offline</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
