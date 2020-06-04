@@ -41,6 +41,10 @@
             <id>jcenter</id>
             <url>https://jcenter.bintray.com/</url>
         </pluginRepository>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </pluginRepository>
     </pluginRepositories>
 
     <distributionManagement>
@@ -320,6 +324,11 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.3.0</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -327,9 +336,7 @@
         <profile>
             <id>shade</id>
             <activation>
-                <property>
-                    <name>!snoozy.dev</name>
-                </property>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <plugins>
