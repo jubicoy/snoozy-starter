@@ -35,13 +35,6 @@
         </developer>
     </developers>
 
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com/</url>
-        </repository>
-    </repositories>
-
     <distributionManagement>
         <repository>
             <id>bintray-jubicoy-maven</id>
@@ -88,12 +81,12 @@
         <dependency>
             <groupId>fi.jubic</groupId>
             <artifactId>easymapper-jooq</artifactId>
-            <version>0.3.0</version>
+            <version>0.4.3</version>
         </dependency>
         <dependency>
             <groupId>fi.jubic</groupId>
             <artifactId>easymapper-generator-jooq</artifactId>
-            <version>0.3.0</version>
+            <version>0.4.3</version>
             <scope>provided</scope>
         </dependency>
 
@@ -248,7 +241,7 @@
             <plugin>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
-                <version>3.11.11</version>
+                <version>3.14.4</version>
                 <configuration>
                     <jdbc>
                         <driver>${snoozy.jooq.jdbcDriver}</driver>
