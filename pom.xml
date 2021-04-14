@@ -9,6 +9,7 @@
 
     <name>snoozy-starter-parent</name>
     <description>Recommended starter application pom</description>
+    <url>https://github.com/jubicoy/snoozy</url>
     <licenses>
         <license>
             <name>MIT License</name>
@@ -17,7 +18,7 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/jubicoy/snoozy</url>
+        <url>https://github.com/jubicoy/snoozy-starter</url>
     </scm>
     <developers>
         <developer>
@@ -31,10 +32,13 @@
     </developers>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>bintray-jubicoy-maven</id>
-            <name>jubicoy-maven</name>
-            <url>https://api.bintray.com/maven/jubicoy/maven/snoozy-starter-parent/;publish=1</url>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </distributionManagement>
 
@@ -316,6 +320,51 @@
     </build>
 
     <profiles>
+        <profile>
+            <id>starter-release</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <snoozy.dev>true</snoozy.dev>
+                <enforcer.skip>true</enforcer.skip>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.8</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>shade</id>
             <activation>
