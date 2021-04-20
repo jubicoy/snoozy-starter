@@ -73,12 +73,12 @@
         <dependency>
             <groupId>fi.jubic</groupId>
             <artifactId>easymapper-jooq</artifactId>
-            <version>0.4.3</version>
+            <version>0.5.0</version>
         </dependency>
         <dependency>
             <groupId>fi.jubic</groupId>
             <artifactId>easymapper-generator-jooq</artifactId>
-            <version>0.4.3</version>
+            <version>0.5.0</version>
             <scope>provided</scope>
         </dependency>
 
