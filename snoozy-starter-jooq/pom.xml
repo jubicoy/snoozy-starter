@@ -5,11 +5,11 @@
     <parent>
         <groupId>fi.jubic</groupId>
         <artifactId>snoozy-starter-parent</artifactId>
-        <version>0.7.1</version>
+        <version>0.7.2</version>
     </parent>
 
     <artifactId>snoozy-starter-jooq</artifactId>
-    <version>0.7.1</version>
+    <version>0.7.2</version>
     <packaging>pom</packaging>
 
     <name>snoozy-starter-jooq</name>
