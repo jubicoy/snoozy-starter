@@ -40,6 +40,7 @@
         <snoozy.jooq.generate.pojos>false</snoozy.jooq.generate.pojos>
         <snoozy.jooq.outputSchemaToDefault>true</snoozy.jooq.outputSchemaToDefault>
         <snoozy.liquibase.migrations>${basedir}/src/main/resources/migrations.xml</snoozy.liquibase.migrations>
+        <easymapper.version>0.5.0</easymapper.version>
     </properties>
 
     <dependencies>
@@ -68,17 +69,13 @@
         </dependency>
         <dependency>
             <groupId>fi.jubic</groupId>
-            <artifactId>easyvalue</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
             <artifactId>easymapper-jooq</artifactId>
-            <version>0.5.0</version>
+            <version>${easymapper.version}</version>
         </dependency>
         <dependency>
             <groupId>fi.jubic</groupId>
             <artifactId>easymapper-generator-jooq</artifactId>
-            <version>0.5.0</version>
+            <version>${easymapper.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -98,16 +95,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.dagger</groupId>
-            <artifactId>dagger</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.dagger</groupId>
-            <artifactId>dagger-compiler</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -134,6 +121,19 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>fi.jubic</groupId>
+                            <artifactId>easymapper-generator-jooq</artifactId>
+                            <version>${easymapper.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
