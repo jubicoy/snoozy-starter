@@ -33,49 +33,4 @@
             <email>vilppu.vuorinen@jubic.fi</email>
         </developer>
     </developers>
-
-    <dependencies>
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>easyconfig-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>easyconfig-snoozy</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>snoozy-auth</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>snoozy-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>snoozy-undertow</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 </project>

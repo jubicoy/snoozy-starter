@@ -46,14 +46,6 @@
     <dependencies>
         <dependency>
             <groupId>fi.jubic</groupId>
-            <artifactId>easyconfig-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>easyconfig-snoozy</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
             <artifactId>easyconfig-jooq</artifactId>
             <version>${easyconfig.version}</version>
         </dependency>
@@ -80,42 +72,8 @@
         </dependency>
 
         <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>snoozy-auth</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>snoozy-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>fi.jubic</groupId>
-            <artifactId>snoozy-undertow</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -126,6 +84,16 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <annotationProcessorPaths>
+                        <path>
+                            <groupId>com.google.dagger</groupId>
+                            <artifactId>dagger-compiler</artifactId>
+                            <version>${dagger.version}</version>
+                        </path>
+                        <path>
+                            <groupId>fi.jubic</groupId>
+                            <artifactId>easyvalue</artifactId>
+                            <version>${easyvalue.version}</version>
+                        </path>
                         <path>
                             <groupId>fi.jubic</groupId>
                             <artifactId>easymapper-generator-jooq</artifactId>
