@@ -40,7 +40,7 @@
         <snoozy.jooq.generate.pojos>false</snoozy.jooq.generate.pojos>
         <snoozy.jooq.outputSchemaToDefault>true</snoozy.jooq.outputSchemaToDefault>
         <snoozy.liquibase.migrations>${basedir}/src/main/resources/migrations.xml</snoozy.liquibase.migrations>
-        <easymapper.version>0.5.0</easymapper.version>
+        <easymapper.version>0.5.1</easymapper.version>
     </properties>
 
     <dependencies>
@@ -69,11 +69,6 @@
             <artifactId>easymapper-generator-jooq</artifactId>
             <version>${easymapper.version}</version>
             <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
         </dependency>
     </dependencies>
 
@@ -105,7 +100,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M2</version>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <id>enforce-properties</id>
@@ -233,7 +228,7 @@
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>3.9.0</version>
+                <version>4.6.2</version>
                 <configuration>
                     <changeLogFile>${snoozy.liquibase.migrations}</changeLogFile>
                     <driver>${snoozy.jooq.jdbcDriver}</driver>
