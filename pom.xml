@@ -72,6 +72,11 @@
         </dependency>
         <dependency>
             <groupId>fi.jubic</groupId>
+            <artifactId>easyconfig-logback</artifactId>
+            <version>${easyconfig.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>fi.jubic</groupId>
             <artifactId>snoozy-auth</artifactId>
             <version>${snoozy.version}</version>
         </dependency>
@@ -104,6 +109,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>fi.jubic</groupId>
+            <artifactId>snoozy-test</artifactId>
+            <version>${snoozy.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
