@@ -49,8 +49,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snoozy.version>0.8.1</snoozy.version>
-        <dagger.version>2.40.5</dagger.version>
+        <snoozy.version>0.8.2</snoozy.version>
+        <dagger.version>2.41</dagger.version>
         <easyconfig.version>0.9.0</easyconfig.version>
         <easyvalue.version>1.3.6</easyvalue.version>
         <spotbugs.version>4.2.3</spotbugs.version>
