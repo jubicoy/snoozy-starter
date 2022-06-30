@@ -161,37 +161,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>${spotbugs.version}</version>
-                <executions>
-                    <execution>
-                        <id>check</id>
-                        <phase>${snoozy.linter.execPhase}</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>fi.jubic</groupId>
-                        <artifactId>snoozy-starter-resources</artifactId>
-                        <version>0.1.0</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <excludeFilterFile>spotbugs-exclude-jooq.xml</excludeFilterFile>
-                    <plugins>
-                        <plugin>
-                            <groupId>com.h3xstream.findsecbugs</groupId>
-                            <artifactId>findsecbugs-plugin</artifactId>
-                            <version>${findsecbugs.version}</version>
-                        </plugin>
-                    </plugins>
-                </configuration>
-            </plugin>
 
             <plugin>
                 <groupId>org.jooq</groupId>
