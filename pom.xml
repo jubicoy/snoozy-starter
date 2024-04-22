@@ -53,7 +53,7 @@
         <dagger.version>2.51.1</dagger.version>
         <easyconfig.version>0.10.0</easyconfig.version>
         <easyvalue.version>1.4.0</easyvalue.version>
-        <spotbugs.version>4.8.2.0</spotbugs.version>
+        <spotbugs.version>4.8.4.0</spotbugs.version>
         <findsecbugs.version>1.13.0</findsecbugs.version>
         <snoozy.front.testPhase>test</snoozy.front.testPhase>
         <snoozy.linter.execPhase>test</snoozy.linter.execPhase>
