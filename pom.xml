@@ -49,7 +49,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snoozy.version>0.10.0</snoozy.version>
+        <snoozy.version>0.10.1</snoozy.version>
         <dagger.version>2.51.1</dagger.version>
         <easyconfig.version>0.10.0</easyconfig.version>
         <easyvalue.version>1.4.0</easyvalue.version>
