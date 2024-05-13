@@ -40,7 +40,7 @@
         <snoozy.jooq.generate.pojos>false</snoozy.jooq.generate.pojos>
         <snoozy.jooq.outputSchemaToDefault>true</snoozy.jooq.outputSchemaToDefault>
         <snoozy.liquibase.migrations>${basedir}/src/main/resources/migrations.xml</snoozy.liquibase.migrations>
-        <easymapper.version>0.5.6</easymapper.version>
+        <easymapper.version>0.5.7</easymapper.version>
     </properties>
 
     <dependencies>
