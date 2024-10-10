@@ -51,7 +51,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snoozy.version>0.10.4</snoozy.version>
         <dagger.version>2.52</dagger.version>
-        <easyconfig.version>0.10.4</easyconfig.version>
+        <easyconfig.version>0.10.5</easyconfig.version>
         <easyvalue.version>1.4.2</easyvalue.version>
         <spotbugs.version>4.8.6.4</spotbugs.version>
         <findsecbugs.version>1.13.0</findsecbugs.version>
