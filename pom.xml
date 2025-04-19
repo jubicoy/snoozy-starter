@@ -50,7 +50,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snoozy.version>0.10.5</snoozy.version>
-        <dagger.version>2.55</dagger.version>
+        <dagger.version>2.56.2</dagger.version>
         <easyconfig.version>0.10.6</easyconfig.version>
         <easyvalue.version>1.4.2</easyvalue.version>
         <spotbugs.version>4.8.6.6</spotbugs.version>
